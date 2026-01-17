@@ -1,0 +1,85 @@
+tarot-atouts/
+│
+├── frontend/
+│   ├── public/
+│   │   ├── manifest.json
+│   │   └── icons/
+│   │
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── App.jsx
+│   │   │   ├── routes.jsx
+│   │   │   └── store.js
+│   │
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   │   ├── Button.jsx
+│   │   │   │   └── Modal.jsx
+│   │   │   │
+│   │   │   ├── game/
+│   │   │   │   ├── Hand.jsx
+│   │   │   │   ├── Trick.jsx
+│   │   │   │   ├── BidPanel.jsx
+│   │   │   │   ├── PlayArea.jsx
+│   │   │   │   └── ScoreBoard.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Lobby.jsx
+│   │   │   ├── Room.jsx
+│   │   │   └── Game.jsx
+│   │   │
+│   │   ├── hooks/
+│   │   │   ├── useSocket.js
+│   │   │   └── useGameState.js
+│   │   │
+│   │   ├── services/
+│   │   │   ├── socketClient.js
+│   │   │   └── api.js
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── cards.js
+│   │   │   └── rules.js
+│   │   │
+│   │   └── styles/
+│   │       └── game.css
+│   │
+│   └── vite.config.js
+│
+├── backend/
+│   ├── worker/
+│   │   ├── index.js
+│   │   ├── router.js
+│   │   └── env.js
+│   │
+│   ├── game/
+│   │   ├── gameState.js
+│   │   ├── rules.js
+│   │   ├── bidding.js
+│   │   ├── trick.js
+│   │   └── scoring.js
+│   │
+│   ├── rooms/
+│   │   └── GameRoom.js
+│   │
+│   ├── services/
+│   │   ├── socketServer.js
+│   │   └── persistence.js
+│   │
+│   └── utils/
+│       ├── deck.js
+│       └── shuffle.js
+│
+├── shared/
+│   ├── constants/
+│   │   ├── phases.js
+│   │   └── events.js
+│   │
+│   ├── models/
+│   │   ├── Card.js
+│   │   └── Player.js
+│   │
+│   └── validators/
+│       └── messages.js
+│
+├── wrangler.toml
+└── README.md
