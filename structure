@@ -83,3 +83,23 @@ tarot-atouts/
 │
 ├── wrangler.toml
 └── README.md
+
+backend/
+├── src/
+│   ├── game/
+│   │   ├── deck.js
+│   │   ├── gameState.js
+│   │   ├── bidding.js
+│   │   ├── trick.js
+│   │   ├── scoring.js
+│   │   └── engine.js
+│   │
+│   ├── rooms/
+│   │   └── GameRoom.js
+│   │
+│   ├── index.js
+│   └── router.js
+│
+├── wrangler.toml
+├── package.json
+└── README.md
