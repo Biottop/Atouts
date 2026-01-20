@@ -84,22 +84,18 @@ tarot-atouts/
 ├── wrangler.toml
 └── README.md
 
-backend/
-├── src/
+├── backend/
 │   ├── game/
-│   │   ├── deck.js
-│   │   ├── gameState.js
-│   │   ├── bidding.js
-│   │   ├── trick.js
-│   │   ├── scoring.js
-│   │   └── engine.js
-│   │
-│   ├── rooms/
-│   │   └── GameRoom.js
-│   │
-│   ├── index.js
-│   └── router.js
-│
-├── wrangler.toml
-├── package.json
-└── README.md
+│   │   ├── GameState.js => createGameState(playerIds, maxCards)
+│   │   ├── Engine.js => createGame(playerIds, maxCards) / startRound(gameState) / submitBid(gameState, playerIndex, bidValue) / 
+                         startPlayPhase(gameState) / playCard(gameState, playerIndex, card, options) / endTrickIfNeeded(gameState) /
+                         endRoundIfNeeded(gameState) / endGameIfNeeded(gameState) / getPublicGameState(gameState)
+│   │   ├── Bidding.js => canBid(gameState, playerIndex, bidValue) / setBid(gameState, playerIndex, bidValue) / areBidsComplete(gameState) / endBidding(gameState)
+│   │   ├── Trick.js => canPlayCard(gameState, playerIndex, card) / playCard(gameState, playerIndex, card, options = {}) / isTrickComplete(gameState) / 
+                        getCardValue(play) / resolveTrick(gameState) / isRoundComplete(gameState)
+│   │   ├── Bot.js => isBotTurn(gameState, botIndex) / playBotTurn(gameState, botIndex, engine) / chooseBid(gameState, botIndex) / chooseCardToPlay(gameState, botIndex) /
+                      chooseExcuseValue() / randomInt(min, max)
+│   │   ├── Deck.js => createDeck() / shuffleDeck(deck) / drawDeck(deck, numberOfCards) / dealCards(deck, players, cardsPerPlayer)
+│   │   └── Scoring.js => calculatePlayerScore(player) / applyRoundScores(gameState) / resetRoundStats(gameState) / updateRoundProgression(gameState) / prepareNextRound(gameState)
+│   ├── test/
+│   │   ├── RunGame.js
